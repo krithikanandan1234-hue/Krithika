@@ -1,0 +1,244 @@
+<!DOCTYPE html>  <html>  
+<head>  
+    <title>Simple Event Registration</title>  <style>  
+    /* Global Styling */  
+    body {  
+        font-family: Arial, sans-serif;  
+        background: linear-gradient(to right, #e3f2fd, #ffffff);  
+        margin: 0;  
+        padding: 0;  
+    }  
+
+    header {  
+        text-align: center;  
+        padding: 20px;  
+    }  
+
+    header h1 {  
+        color: #1565c0;  
+        font-size: 32px;  
+    }  
+
+    .description {  
+        line-height: 1.6;  
+        margin-top: 10px;  
+    }  
+
+    .event-info {  
+        background-color: #f1f8ff;  
+        margin: 20px;  
+        padding: 15px;  
+        border-radius: 8px;  
+    }  
+
+    .form-container {  
+        width: 60%;  
+        margin: 20px auto;  
+        background-color: white;  
+        padding: 20px;  
+        border-radius: 10px;  
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);  
+    }  
+
+    fieldset {  
+        border: 1px solid #90caf9;  
+        padding: 15px;  
+        margin-bottom: 15px;  
+        border-radius: 8px;  
+    }  
+
+    legend {  
+        font-weight: bold;  
+        background-color: #e3f2fd;  
+        padding: 5px 10px;  
+        border-radius: 5px;  
+    }  
+
+    input, select, textarea {  
+        width: 100%;  
+        padding: 8px;  
+        margin: 8px 0 12px 0;  
+        border-radius: 5px;  
+        border: 1px solid #ccc;  
+    }  
+
+    input:focus, select:focus, textarea:focus {  
+        border-color: #1565c0;  
+        outline: none;  
+    }  
+
+    .radio-group input {  
+        width: auto;  
+        margin-right: 5px;  
+    }  
+
+    .buttons {  
+        text-align: center;  
+    }  
+
+    button {  
+        background-color: #1565c0;  
+        color: white;  
+        padding: 10px 20px;  
+        border: none;  
+        border-radius: 5px;  
+        cursor: pointer;  
+        margin: 5px;  
+        transition: 0.3s;  
+    }  
+
+    button:hover {  
+        background-color: #0d47a1;  
+    }  
+
+    table {  
+        width: 80%;  
+        margin: 20px auto;  
+        border-collapse: collapse;  
+    }  
+
+    th, td {  
+        border: 1px solid #ccc;  
+        padding: 10px;  
+        text-align: center;  
+    }  
+
+    th {  
+        background-color: #1565c0;  
+        color: white;  
+    }  
+
+    tr:nth-child(even) {  
+        background-color: #f2f2f2;  
+    }  
+
+    tr:hover {  
+        background-color: #bbdefb;  
+    }  
+
+    footer {  
+        background-color: #1565c0;  
+        color: white;  
+        text-align: center;  
+        padding: 15px;  
+        margin-top: 30px;  
+    }  
+</style>
+
+</head>  
+<body>  <header>  
+    <h1>Synapse Workshop 2026</h1>  
+    <p class="description">  
+        Join our workshop to learn the fundamentals of HTML and CSS.   
+        This event includes practical sessions and interactive learning.  
+    </p>  
+</header>  
+
+<section class="event-info">  
+    <h2>Event Information</h2>  
+    <p><strong>Date:</strong> 28 February 2026</p>  
+    <p><strong>Time:</strong> 10:00 AM – 4:00 PM</p>  
+    <p><strong>Venue:</strong> Computer Lab – Block A</p>  
+    <p><strong>Organizer:</strong> Department of Computer Application</p>  
+</section>  
+
+<div class="form-container">  
+    <h2>Registration Form</h2>  
+
+    <form>  
+
+        <fieldset>  
+            <legend>Personal Information</legend>  
+
+            <label>Full Name</label>  
+            <input type="text">  
+
+            <label>Email</label>  
+            <input type="email">  
+
+            <label>Phone Number</label>  
+            <input type="tel">  
+
+            <label>Date of Birth</label>  
+            <input type="date">  
+
+            <label>Gender</label>  
+            <div class="radio-group">  
+                <input type="radio" name="gender"> Male  
+                <input type="radio" name="gender"> Female  
+            </div>  
+        </fieldset>  
+
+        <fieldset>  
+            <legend>Event Selection</legend>  
+
+            <label>Select Event</label>  
+            <select>  
+                <option>Synapse Workshop</option>  
+                <option>UI/UX Seminar</option>  
+            </select>  
+
+            <label>Mode of Participation</label>  
+            <div class="radio-group">  
+                <input type="radio" name="mode"> Offline  
+                <input type="radio" name="mode"> Online  
+            </div>  
+        </fieldset>  
+
+        <fieldset>  
+            <legend>Additional Details</legend>  
+
+            <label>College Name</label>  
+            <input type="text">  
+
+            <label>Year of Study</label>  
+            <input type="text">  
+
+            <label>Department</label>  
+            <input type="text">  
+
+            <label>Comments</label>  
+            <textarea rows="4"></textarea>  
+        </fieldset>  
+
+        <div>  
+            <input type="checkbox">  
+            I hereby declare that the above information is true.  
+        </div>  
+
+        <div class="buttons">  
+            <button type="submit">Submit</button>  
+            <button type="reset">Reset</button>  
+        </div>  
+
+    </form>  
+</div>  
+
+<section>  
+    <h2 style="text-align:center;">Registered Participants</h2>  
+
+    <table>  
+        <tr>  
+            <th>Name</th>  
+            <th>Email</th>  
+            <th>Phone</th>  
+            <th>Event</th>  
+            <th>Mode</th>  
+        </tr>  
+        <tr>  
+            <td>XYZ</td>  
+            <td>xyz@gmail.com</td>  
+            <td>8056928714</td>  
+            <td>Synapse Workshop</td>  
+            <td>Offline</td>  
+        </tr>  
+    </table>  
+</section>  
+
+<footer>  
+    <p>Contact: Synapse@abccollege.edu | +91 8056928714</p>  
+    <p>© 2026 Department of Computer Application. All Rights Reserved.</p>  
+</footer>
+
+</body>  
+</html>
