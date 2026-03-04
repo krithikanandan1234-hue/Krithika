@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Registration</title>
+
+<style>
+body{
+    font-family: 'Segoe UI', sans-serif;
+    margin:0;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+}
+
+header{
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+
+.container{
+    width:55%;
+    margin:20px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,#1e3c72,#2a5298);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.success-msg{
+    background:#4CAF50;
+    color:white;
+    padding:10px;
+    text-align:center;
+    border-radius:8px;
+    margin-top:10px;
+    display:none;
+}
+
+.table-section{
+    width:85%;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#1e3c72;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+tr:hover{
+    background:#dbe9ff;
+}
+
+.count{
+    text-align:right;
+    font-weight:bold;
+    margin-bottom:10px;
+    color:#1e3c72;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌟 Synapse Workshop 2026 🌟</h1>
+</header>
+
+<div class="container">
+
+<form id="form">
+
+<label>Name</label>
+<input type="text" id="name" required>
+
+<label>Email</label>
+<input type="email" id="email" required>
+
+<label>Phone</label>
+<input type="text" id="phone" required>
+
+<label>Event</label>
+<select id="event" required>
+<option value="">Select Event</option>
+<option>Web Development</option>
+<option>UI/UX Seminar</option>
+</select>
+
+<label>Mode</label>
+<select id="mode" required>
+<option value="">Select Mode</option>
+<option>Online</option>
+<option>Offline</option>
+</select>
+
+<br>
+<button type="submit">Register Now 🚀</button>
+
+</form>
+
+<div class="success-msg" id="successMsg">
+✅ Registration Successful!
+</div>
+
+</div>
+
+<div class="table-section">
+
+<div class="count">
+Total Participants: <span id="count">3</span>
+</div>
+
+<table id="table">
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Event</th>
+<th>Mode</th>
+</tr>
+
+<!-- Pre-added Participants -->
+<tr>
+<td>Ananya R</td>
+<td>ananya@gmail.com</td>
+<td>9876543210</td>
+<td>Synapse</td>
+<td>Online</td>
+</tr>
+
+<tr>
+<td>Rahul K</td>
+<td>rahul@gmail.com</td>
+<td>9123456780</td>
+<td>Synapse</td>
+<td>Offline</td>
+</tr>
+
+<tr>
+<td>Meera S</td>
+<td>meera@gmail.com</td>
+<td>9988776655</td>
+<td>Synapse</td>
+<td>Offline</td>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+let total = 3;
+
+document.getElementById("form").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let phone = document.getElementById("phone").value;
+let event = document.getElementById("event").value;
+let mode = document.getElementById("mode").value;
+
+let table = document.getElementById("table");
+let row = table.insertRow(-1);
+
+row.insertCell(0).innerHTML=name;
+row.insertCell(1).innerHTML=email;
+row.insertCell(2).innerHTML=phone;
+row.insertCell(3).innerHTML=event;
+row.insertCell(4).innerHTML=mode;
+
+total++;
+document.getElementById("count").innerText=total;
+
+document.getElementById("successMsg").style.display="block";
+
+setTimeout(()=>{
+document.getElementById("successMsg").style.display="none";
+},3000);
+
+document.getElementById("form").reset();
+
+});
+
+</script>
+
+</body>
+</html>
