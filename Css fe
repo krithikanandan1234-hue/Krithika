@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Development Workshop 2026</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#2f4e85;
+margin:0;
+text-align:center;
+}
+
+h1{
+color:white;
+padding:20px;
+}
+
+.box{
+background:white;
+width:500px;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+li{
+padding:6px;
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:8px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:95%;
+padding:10px;
+background:#2f4e85;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+}
+
+button:hover{
+background:#1d3557;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th{
+background:#2f4e85;
+color:white;
+padding:10px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #ccc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Web Development Workshop 2026</h1>
+
+<div class="box">
+
+<h2>Event Information</h2>
+
+<ul>
+<li><b>Date:</b> 20 April 2026</li>
+<li><b>Time:</b> 10:00 AM – 4:00 PM</li>
+<li><b>Venue:</b> Computer Lab - Block A</li>
+<li><b>Organizer:</b> Department of Computer Science</li>
+</ul>
+
+</div>
+
+<div class="box">
+
+<h2>Registration Form</h2>
+
+<input type="text" placeholder="Enter Name">
+
+<input type="email" placeholder="Enter Email">
+
+<input type="number" placeholder="Enter Phone Number">
+
+<select>
+<option>Select Event</option>
+<option>Web Development Workshop 2026</option>
+</select>
+
+<select>
+<option>Select Mode</option>
+<option>Online</option>
+<option>Offline</option>
+</select>
+
+<button>Register Now</button>
+
+</div>
+
+<div class="box">
+
+<h2>Participant Details</h2>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Event</th>
+<th>Mode</th>
+</tr>
+
+</table>
+
+</div>
+
+</body>
+</html>
