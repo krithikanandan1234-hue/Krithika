@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Development Workshop 2026</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#2f4e85;
+text-align:center;
+margin:0;
+}
+
+h1{
+color:white;
+padding:20px;
+}
+
+.box{
+background:white;
+width:500px;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:8px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:95%;
+padding:10px;
+background:#2f4e85;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d3557;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th{
+background:#2f4e85;
+color:white;
+padding:10px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #ccc;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+li{
+padding:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Web Development Workshop 2026</h1>
+
+<div class="box">
+
+<h2>Event Information</h2>
+
+<ul>
+<li><b>Date:</b> 20 April 2026</li>
+<li><b>Time:</b> 10:00 AM – 4:00 PM</li>
+<li><b>Venue:</b> Computer Lab - Block A</li>
+<li><b>Organizer:</b> Department of Computer Science</li>
+</ul>
+
+</div>
+
+<div class="box">
+
+<h2>Registration Form</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="number" id="phone" placeholder="Enter Phone Number">
+
+<select id="event">
+<option>Web Development Workshop 2026</option>
+</select>
+
+<select id="mode">
+<option>Online</option>
+<option>Offline</option>
+</select>
+
+<button onclick="register()">Register Now</button>
+
+</div>
+
+<div class="box">
+
+<h2>Participant Details</h2>
+
+<table id="table">
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Event</th>
+<th>Mode</th>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+function register(){
+
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var phone=document.getElementById("phone").value;
+var event=document.getElementById("event").value;
+var mode=document.getElementById("mode").value;
+
+var table=document.getElementById("table");
+
+var row=table.insertRow();
+
+row.insertCell(0).innerHTML=name;
+row.insertCell(1).innerHTML=email;
+row.insertCell(2).innerHTML=phone;
+row.insertCell(3).innerHTML=event;
+row.insertCell(4).innerHTML=mode;
+
+}
+
+</script>
+
+</body>
+</html>
