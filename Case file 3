@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Real Time Notification Widget</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+margin-top:100px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+#notification-container{
+position:fixed;
+top:20px;
+right:20px;
+width:250px;
+}
+
+.notification{
+background:#333;
+color:white;
+padding:15px;
+margin-top:10px;
+border-radius:5px;
+animation:fadein 0.5s;
+}
+
+@keyframes fadein{
+from{opacity:0; transform:translateY(-10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Real Time Notification Widget</h2>
+
+<button onclick="showNotification()">Show Notification</button>
+
+<div id="notification-container"></div>
+
+<script>
+
+function showNotification(){
+
+let container = document.getElementById("notification-container");
+
+let notification = document.createElement("div");
+
+notification.className="notification";
+
+notification.innerText="You have a new notification!";
+
+container.appendChild(notification);
+
+setTimeout(()=>{
+notification.remove();
+},3000);
+
+}
+
+</script>
+
+</body>
+</html>
