@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Quiz App</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.quiz-container {
+    width: 400px;
+    background: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.option {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #ddd;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#score {
+    font-size: 18px;
+    margin-top: 15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="quiz-container">
+    <h2 id="question">Question</h2>
+    <div id="options"></div>
+    <button onclick="nextQuestion()">Next</button>
+    <p id="score"></p>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "What does HTML stand for?",
+        options: ["Hyper Trainer Marking Language", "Hyper Text Markup Language", "Hyper Text Marketing Language", "Hyper Tool Multi Language"],
+        answer: "Hyper Text Markup Language"
+    },
+    {
+        question: "Which language is used for styling?",
+        options: ["HTML", "CSS", "JavaScript", "Python"],
+        answer: "CSS"
+    },
+    {
+        question: "Which is used for web logic?",
+        options: ["Java", "C++", "JavaScript", "PHP"],
+        answer: "JavaScript"
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let selectedAnswer = "";
+
+function loadQuestion() {
+    let q = quizData[currentQuestion];
+    document.getElementById("question").innerText = q.question;
+
+    let optionsHTML = "";
+    q.options.forEach(option => {
+        optionsHTML += `<div class="option" onclick="selectAnswer('${option}')">${option}</div>`;
+    });
+
+    document.getElementById("options").innerHTML = optionsHTML;
+}
+
+function selectAnswer(answer) {
+    selectedAnswer = answer;
+}
+
+function nextQuestion() {
+    if (selectedAnswer === quizData[currentQuestion].answer) {
+        score++;
+    }
+
+    currentQuestion++;
+    selectedAnswer = "";
+
+    if (currentQuestion < quizData.length) {
+        loadQuestion();
+    } else {
+        document.querySelector(".quiz-container").innerHTML = `
+            <h2>Quiz Completed!</h2>
+            <p>Your Score: ${score} / ${quizData.length}</p>
+        `;
+    }
+
+    document.getElementById("score").innerText = "Score: " + score;
+}
+
+// Start Quiz
+loadQuestion();
+</script>
+
+</body>
+</html>
